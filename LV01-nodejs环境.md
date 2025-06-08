@@ -1,5 +1,5 @@
 ---
-title: nodejs环境
+title: LV01-nodejs环境
 icon: ion:logo-markdown
 ---
 
@@ -13,7 +13,7 @@ icon: ion:logo-markdown
 
 Node.js的官网是[Node.js — 在任何地方运行 JavaScript](https://nodejs.org/zh-cn)，看一下官网怎么说的：
 
-![image-20250607213914739](./nodejs环境/img/image-20250607213914739.png)
+![image-20250607213914739](./LV01-nodejs环境/img/image-20250607213914739.png)
 
 可以看到，官网只有一句话：**Node.js® 是一个免费、开源、跨平台的 JavaScript 运行时环境, 它让开发人员能够创建服务器 Web 应用、命令行工具和脚本。**（实际上更详细的可以去看它的文档：[Node.js 中文网 — Node.js 简介](https://nodejs.cn/en/learn)）
 
@@ -178,7 +178,7 @@ Yarn（Yet Another Resource Negotiator），虽然这个名称听起来有些神
 
 PNPM，意为高性能的NPM，它旨在解决YARN和NPM出现的问题。PNPM通过引入一些与NPM和YARN相似却又具有明显改进的命令，为JavaScript项目的依赖管理带来了新的解决方案。使用 npm 时，如果有 100 个使用依赖的项目，则磁盘上将保存该依赖的 100 个副本。使用 pnpm，依赖将存储在内容可寻址存储中，因此：
 
-<img src="./nodejs环境/img/image-20250606131215818.png" alt="image-20250606131215818" />
+<img src="./LV01-nodejs环境/img/image-20250606131215818.png" alt="image-20250606131215818" />
 
 （1）如果我们依赖于不同版本的依赖，则仅将不同的文件添加到存储中。例如，如果它有 100 个文件，并且新版本仅对其中一个文件进行了更改，则 `pnpm update` 将仅向存储添加 1 个新文件，而不是仅针对单个更改克隆整个依赖。
 
@@ -226,7 +226,7 @@ npx，Node Package Execute 即node包执行器。它是npm v5.2.0版本之后随
 
 这种方式安装Node.js的时候是可以选默认的包管理器的：
 
-<img src="./nodejs环境/img/image-20250607224529687.png" alt="image-20250607224529687" />
+<img src="./LV01-nodejs环境/img/image-20250607224529687.png" alt="image-20250607224529687" />
 
 上面那个Using就是要从哪里获取node，这里选Docker，就是在命令行安装。但是我没有用这种方式，我用的另一种。
 
@@ -234,21 +234,21 @@ npx，Node Package Execute 即node包执行器。它是npm v5.2.0版本之后随
 
 我们从官网下载node：[Node.js — Download Node.js®](https://nodejs.org/en/download)：
 
-<img src="./nodejs环境/img/image-20250607225349505.png" alt="image-20250607225349505" />
+<img src="./LV01-nodejs环境/img/image-20250607225349505.png" alt="image-20250607225349505" />
 
 我这里选择免安装版本(有个好处就是便于打包移动)。下载完毕后我们会得到这样一个压缩包：
 
-<img src="./nodejs环境/img/image-20250529230646624.png" alt="image-20250529230646624" />
+<img src="./LV01-nodejs环境/img/image-20250529230646624.png" alt="image-20250529230646624" />
 
 #### <font size=3>1.2 解压安装</font>
 
 上面下载的是免安装版本，所以直接解压就可以了：
 
-<img src="./nodejs环境/img/image-20250529231100000.png" alt="image-20250529231100000"  />
+<img src="./LV01-nodejs环境/img/image-20250529231100000.png" alt="image-20250529231100000"  />
 
 可以看到里面包含了npm、node.exe还有npx。这里我们直接新建 node_cache 和 node_global 目录：
 
-<img src="./nodejs环境/img/image-20250607231118123.png" alt="image-20250607231118123" />
+<img src="./LV01-nodejs环境/img/image-20250607231118123.png" alt="image-20250607231118123" />
 
 #### <font size=3>1.3 环境变量</font>
 
@@ -264,11 +264,11 @@ sysdm.cpl
 
 我们在系统环境变量中添加：
 
-<img src="./nodejs环境/img/image-20250607230916956.png" alt="image-20250607230916956" />
+<img src="./LV01-nodejs环境/img/image-20250607230916956.png" alt="image-20250607230916956" />
 
 然后我们可以打开文件资源管理器，在地址栏输入 %NODE_HOME% ，然后回车，如果添加没问题的话，应该就可以打node的安装目录了：
 
-<img src="./nodejs环境/img/image-20250529232125680.png" alt="image-20250529232125680" />
+<img src="./LV01-nodejs环境/img/image-20250529232125680.png" alt="image-20250529232125680" />
 
 ##### <font size=3>1.3.2 【USER】—— Path</font>
 
@@ -280,7 +280,7 @@ sysdm.cpl
 %NODE_HOME%\node_cache
 ```
 
-<img src="./nodejs环境/img/image-20250607231324705.png" alt="image-20250607231324705" />
+<img src="./LV01-nodejs环境/img/image-20250607231324705.png" alt="image-20250607231324705" />
 
 后面两个路径是后面修改了npm安装全局包的目录和缓存目录后要使用的。
 
@@ -293,11 +293,11 @@ node -v
 npm -v
 ```
 
-<img src="./nodejs环境/img/image-20250607231407132.png" alt="image-20250607231407132" />
+<img src="./LV01-nodejs环境/img/image-20250607231407132.png" alt="image-20250607231407132" />
 
 能打印出版本说明安装成功，后续可以正常使用。如果是powershell的话，有可能会出现下面的问题：
 
-<img src="./nodejs环境/img/image-20250529164612799.png" alt="image-20250529164612799" />
+<img src="./LV01-nodejs环境/img/image-20250529164612799.png" alt="image-20250529164612799" />
 
 这通常意味着 Windows 的执行策略设置为禁止运行 PowerShell脚本。默认情况下，Windows 可能出于安全考虑，限制了脚本的执行。可以以管理员身份运行powershell，然后执行以下命令：
 
@@ -307,11 +307,11 @@ Set-ExecutionPolicy RemoteSigned
 
 这个命令会将执行策略设置为允许运行本地脚本和远程签名的脚本，但阻止未签名的本地脚本。
 
-<img src="./nodejs环境/img/image-20250529164924317.png" alt="image-20250529164924317"  />
+<img src="./LV01-nodejs环境/img/image-20250529164924317.png" alt="image-20250529164924317"  />
 
 然后重新执行就可以了：
 
-<img src="./nodejs环境/img/image-20250529165046330.png" alt="image-20250529165046330"  />
+<img src="./LV01-nodejs环境/img/image-20250529165046330.png" alt="image-20250529165046330"  />
 
 ### <font size=3>2. 基本命令</font>
 
@@ -395,19 +395,19 @@ npm install -g hexo-cli
 
 然后就会看到以下输出信息：
 
-<img src="./nodejs环境/img/image-20250608094849041.png" alt="image-20250608094849041" />
+<img src="./LV01-nodejs环境/img/image-20250608094849041.png" alt="image-20250608094849041" />
 
 然后我们打开`%LOCALAPPDATA%`目录，会看到这里生成了一个npm-cache目录：
 
-<img src="./nodejs环境/img/image-20250608095124154.png" alt="image-20250608095124154" />
+<img src="./LV01-nodejs环境/img/image-20250608095124154.png" alt="image-20250608095124154" />
 
 然后打开`%NODE_HOME%`，就会发现hexo相关的命令会出现在这里：
 
-<img src="./nodejs环境/img/image-20250608095417644.png" alt="image-20250608095417644" />
+<img src="./LV01-nodejs环境/img/image-20250608095417644.png" alt="image-20250608095417644" />
 
 我们再打开`%NODE_HOME%/node_modules`，就会发现，包默认被安装在了这里：
 
-<img src="./nodejs环境/img/image-20250608095526015.png" alt="image-20250608095526015" />
+<img src="./LV01-nodejs环境/img/image-20250608095526015.png" alt="image-20250608095526015" />
 
 当我们的`%NODE_HOME%`不在C盘时，当然也无所谓，要是在C盘，就会占用很多的空间。
 
@@ -428,7 +428,7 @@ npm list -g
 
 我们可以看一下这个文件 `%USER%\.npmrc`：
 
-<img src="./nodejs环境/img/image-20250529234559892.png" alt="image-20250529234559892" />
+<img src="./LV01-nodejs环境/img/image-20250529234559892.png" alt="image-20250529234559892" />
 
 会发现这里出现了两项配置。
 
@@ -443,11 +443,11 @@ npm i -g hexo-cli
 
 然后我们再看一下node_cache目录：
 
-<img src="./nodejs环境/img/image-20250608100240048.png" alt="image-20250608100240048" />
+<img src="./LV01-nodejs环境/img/image-20250608100240048.png" alt="image-20250608100240048" />
 
 再来看一下 node_global 目录，可以看到命令和相关的包都安装到了这里：
 
-<img src="./nodejs环境/img/image-20250608100337710.png" alt="image-20250608100337710" />
+<img src="./LV01-nodejs环境/img/image-20250608100337710.png" alt="image-20250608100337710" />
 
 
 
@@ -466,7 +466,7 @@ pnpm -v
 
 前面已经配置过npm包的位置，所以这里我们会看到pnpm出现在了之前设置的目录中：
 
-<img src="./nodejs环境/img/image-20250608130743841.png" alt="image-20250608130743841" />
+<img src="./LV01-nodejs环境/img/image-20250608130743841.png" alt="image-20250608130743841" />
 
 
 
@@ -528,7 +528,7 @@ pnpm add -g pnpm to update
 pnpm i -g yrm
 ```
 
-<img src="./nodejs环境/img/image-20250608131707294.png" alt="image-20250608131707294" />
+<img src="./LV01-nodejs环境/img/image-20250608131707294.png" alt="image-20250608131707294" />
 
 下面其实已经告诉我们要怎么做了，如果直接运行`pnpm setup`的话，会自动使用官方的一些默认配置，将一些文件安装到`%LOCALAPPDATA%`，也就是C盘的Local目录，有三种方法解决。
 
@@ -544,19 +544,19 @@ pnpm setup
 
 会得到如下打印信息：
 
-<img src="./nodejs环境/img/image-20250608131829318.png" alt="image-20250608131829318" />
+<img src="./LV01-nodejs环境/img/image-20250608131829318.png" alt="image-20250608131829318" />
 
 其实就是定义了两个环境变量：
 
-<img src="./nodejs环境/img/image-20250608132202254.png" alt="image-20250608132202254" />
+<img src="./LV01-nodejs环境/img/image-20250608132202254.png" alt="image-20250608132202254" />
 
 接下来新打开一个windows终端，就可以直接使用了（要是不行，就重启一下电脑），我们再次执行安装yrm的命令：
 
-<img src="./nodejs环境/img/image-20250608132244200.png" alt="image-20250608132244200" />
+<img src="./LV01-nodejs环境/img/image-20250608132244200.png" alt="image-20250608132244200" />
 
 其实从提示信息可以看到，这里其实就是安装到了`%LOCALAPPDATA%\pnpm\global`目录中，我们看一下`%LOCALAPPDATA%`目录：
 
-<img src="./nodejs环境/img/image-20250608132325890.png" alt="image-20250608132325890" />
+<img src="./LV01-nodejs环境/img/image-20250608132325890.png" alt="image-20250608132325890" />
 
 从上述两张图中以及它自动配置的用户变量中，我们可以很容易的知道它默认是安装在C盘的Local目录下的。对于其这一点官网有明确的说明，[**文件默认安装位置路径。**](https://pnpm.io/settings#globaldir)
 
@@ -566,15 +566,15 @@ pnpm setup
 
 我们可以和上面一样，在用户变量中创建PNPM_HOME并指定路径，然后添加到Path中，只是提前指定好路径，也可以在系统环境变量操作，然后要是没生效就重启下电脑。
 
-<img src="./nodejs环境/img/image-20250608133505089.png" alt="image-20250608133505089" />
+<img src="./LV01-nodejs环境/img/image-20250608133505089.png" alt="image-20250608133505089" />
 
 然后执行`pnpm setup`，再执行yrm安装命令：
 
-<img src="./nodejs环境/img/image-20250608133854631.png" alt="image-20250608133854631" />
+<img src="./LV01-nodejs环境/img/image-20250608133854631.png" alt="image-20250608133854631" />
 
 从这里就可以知道，刚才设置的环境变量生效了。现在yrm已经安装到了指定的目录。但是这种方式，还需要修改`pnpm-cache`和`pnpm-state`两个文件夹的位置，当手动修改完pnpm的环境变量后，使用pnpm安装依赖时，会发现pnpm-cache和pnpm-state这两个文件仍然在C盘目录下，如下图：
 
-<img src="./nodejs环境/img/image-20250608134038035.png" alt="image-20250608134038035" />
+<img src="./LV01-nodejs环境/img/image-20250608134038035.png" alt="image-20250608134038035" />
 
 这个时候我们需要通过命令来配置：
 
@@ -587,7 +587,7 @@ pnpm config set state-dir "D:\devSoftware\node-v22.16.0-win-x64\pnpm_home\pnpm-s
 
 我们卸载后重新安装yrm，提前删除上面c盘相关的文件，然后就会发现，两个目录已经不在c盘了，会在刚才设置的目录中：
 
-<img src="./nodejs环境/img/image-20250608134705458.png" alt="image-20250608134705458" />
+<img src="./LV01-nodejs环境/img/image-20250608134705458.png" alt="image-20250608134705458" />
 
 #### <font size=3>3.3 方式三：直接命令配置</font>
 
@@ -609,24 +609,24 @@ pnpm config set store-dir "D:\devSoftware\node-v22.16.0-win-x64\pnpm-home\pnpm-s
 
 这里的路径中文件夹可以事先自行建立好文件的储存路径，也可以直接不用实现建立好文件的储存路径，因为，当我们配置好pnpm后，使用pnpm安装依赖时，你命令中所设置的所有路径即文件夹，都会按照层次级别自动生成的。设置完成后，会在`%LOCALAPPDATA%\pnpm\config`目录中生成一个配置文件。
 
-<img src="./nodejs环境/img/image-20250608140233186.png" alt="image-20250608140233186" />
+<img src="./LV01-nodejs环境/img/image-20250608140233186.png" alt="image-20250608140233186" />
 
 这个文件的内容如下：
 
-<img src="./nodejs环境/img/image-20250608140330643.png" alt="image-20250608140330643" />
+<img src="./LV01-nodejs环境/img/image-20250608140330643.png" alt="image-20250608140330643" />
 
 这里刚好就是前面设置的路径，然后我们运行`pnpm setup`是会有问题的：
 
-<img src="./nodejs环境/img/image-20250608140839705.png" alt="image-20250608140839705" />
+<img src="./LV01-nodejs环境/img/image-20250608140839705.png" alt="image-20250608140839705" />
 
 就会发现根本没有修改成功。这个时候我们还需要配置PNPM环境变量（PNPM环境变量映射），这里所配置的PNPM的环境变量与前面两种方法中所配置的PNPM环境变量是完全不一样的，是有巨大的差异的。虽然它们的名称都是PNPM_HOME，但是它们各自代表的含义是不同的，此处在这里所配置的PNPM环境变量，代表的是全局安装包的 bin 文件的目标目录。而上面两种方法中所配置的PNPM环境变量，代表的是储存全局依赖的目录。
 
-<img src="./nodejs环境/img/image-20250608141152522.png" alt="image-20250608141152522" />
+<img src="./LV01-nodejs环境/img/image-20250608141152522.png" alt="image-20250608141152522" />
 
 然后再执行`pnpm setup`，然后重新安装：
 
-<img src="./nodejs环境/img/image-20250608141616262.png" alt="image-20250608141616262" />
+<img src="./LV01-nodejs环境/img/image-20250608141616262.png" alt="image-20250608141616262" />
 
 安装完毕后查看一下，就会发现这里自动生成了相关的目录和文件：
 
-<img src="./nodejs环境/img/image-20250608141701443.png" alt="image-20250608141701443" />
+<img src="./LV01-nodejs环境/img/image-20250608141701443.png" alt="image-20250608141701443" />
